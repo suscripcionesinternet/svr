@@ -3,6 +3,9 @@ on:
   schedule:
     - cron: '0 13 * * 1-5'
   workflow_dispatch:
+permissions:
+  id-token: write
+  contents: read
 jobs:
   noticias:
     runs-on: ubuntu-latest
