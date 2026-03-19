@@ -1,0 +1,13 @@
+name: Noticias Petróleo Colombia
+on:
+  schedule:
+    - cron: '0 13 * * 1-5'
+  workflow_dispatch:
+jobs:
+  noticias:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: anthropics/claude-code-action@v1
+        with:
+          prompt: "dame las noticias más relevantes de petróleo en Colombia hoy"
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
